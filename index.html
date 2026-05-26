@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Для самой лучшей мамы 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #e8a0bf;
+      --secondary: #f9f1f0;
+      --accent: #d4a373;
+      --text: #4a4a4a;
+      --bg: #fffaf5;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      padding: 2rem;
+      transition: opacity 0.8s ease;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #2c2c2c;
+    }
+    .btn {
+      background: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      margin-top: 1.5rem;
+      font-weight: 600;
+    }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s, transform 0.8s;
+    }
+    main.visible { opacity: 1; transform: translateY(0); }
+    section { margin-bottom: 3rem; }
+    h2 { font-family: 'Playfair Display', serif; text-align: center; margin-bottom: 1.5rem; font-size: 2rem; }
+    
+    /* 📸 ИСПРАВЛЕННАЯ СЕТКА ФОТО */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      padding: 1rem 0;
+    }
+    .photo-container {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+    .photo-container:hover { transform: translateY(-5px); }
+    .photo-container img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+    .photo-caption {
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    
+    #message {
+      text-align: center;
+      font-size: 1.3rem;
+      min-height: 60px;
+      margin: 1rem 0;
+      font-style: italic;
+      color: var(--accent);
+      transition: opacity 0.3s;
+    }
+    #heartsContainer {
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      cursor: crosshair;
+      user-select: none;
+    }
+    .heart {
+      position: fixed;
+      font-size: 1.5rem;
+      pointer-events: none;
+      animation: floatUp 2s ease-out forwards;
+      z-index: 999;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-150px) scale(1.5); opacity: 0; }
+    }
+    footer { text-align: center; padding: 2rem; color: #888; font-size: 0.9rem; }
+    @media (max-width: 600px) { 
+      h1 { font-size: 2.2rem; } 
+      .photo-grid { grid-template-columns: 1fr; }
+      .photo-container img { height: 250px; }
+    }
+  </style>
+</head>
+<body>
+  <header id="intro">
+    <h1>Мама, ты — моё всё ❤️</h1>
+    <p>Нажми кнопку, чтобы увидеть поздравление</p>
+    <button class="btn" id="startBtn">Открыть подарок 🌸</button>
+  </header>
+
+  <main id="content">
+    <section>
+      <h2>Наши тёплые моменты 📸</h2>
+      <div class="photo-grid">
+        <!-- ЗАМЕНИ src НА СВОИ ФОТО -->
+        <div class="photo-container">
+          <img src="images/3bd53659-4b97-4aed-abb8-2a5f486414cf.jfif" alt="Момент 1">
+          <div class="photo-caption">Наше путешествие 🌊</div>
+        </div>
+        <div class="photo-container">
+          <img src="images/6bf2f2da-5991-4c42-87f0-996c5c01d8a4.jfif" alt="Момент 2">
+          <div class="photo-caption">Вместе всегда 💕</div>
+        </div>
+        <div class="photo-container">
+          <img src="images/7a336b80-af51-4d65-84b9-6e42b5e9015d.jfif" alt="Момент 3">
+          <div class="photo-caption">Счастливые моменты ☀️</div>
+        </div>
+        <div class="photo-container">
+          <img src="images/f539dcbe-b3f7-4940-bc1d-dbaf37bb2dcb.jfif" alt="Момент 4">
+          <div class="photo-caption">Любимая мама 🌸</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Слова от сердца 💌</h2>
+      <p id="message">Нажми кнопку, чтобы прочитать...</p>
+      <div style="text-align:center;">
+        <button class="btn" id="newMessageBtn">Следующее пожелание ✨</button>
+      </div>
+    </section>
+
+    <section id="heartsContainer">
+      <p>Кликни в любом месте страницы, чтобы выпустить любовь 💕</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Сделано с бесконечной любовью специально для тебя, мама 💐</p>
+  </footer>
+
+  <script>
+    const messages = [
+      "Ты — мой самый первый учитель и самая надёжная поддержка.",
+      "Спасибо за бессонные ночи, тёплые объятия и веру в меня.",
+      "Твоя любовь — это компас, который всегда ведёт меня к счастью.",
+      "Я горжусь тем, что я твой ребёнок. Ты лучшая мама на свете!",
+      "Пусть каждый твой день будет наполнен радостью, как ты наполняешь мою жизнь.",
+      "Люблю тебя больше, чем слова могут выразить. Спасибо за всё, мама! 💖"
+    ];
+
+    const startBtn = document.getElementById('startBtn');
+    const content = document.getElementById('content');
+    const newMsgBtn = document.getElementById('newMessageBtn');
+    const msgEl = document.getElementById('message');
+    let msgIndex = 0;
+
+    startBtn.addEventListener('click', () => {
+      document.getElementById('intro').style.opacity = '0';
+      setTimeout(() => {
+        document.getElementById('intro').style.display = 'none';
+        content.classList.add('visible');
+      }, 800);
+    });
+
+    newMsgBtn.addEventListener('click', () => {
+      msgEl.style.opacity = '0';
+      setTimeout(() => {
+        msgEl.textContent = messages[msgIndex];
+        msgIndex = (msgIndex + 1) % messages.length;
+        msgEl.style.opacity = '1';
+      }, 300);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('button')) return;
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.textContent = ['💖','💕','🌸','✨','💐'][Math.floor(Math.random()*5)];
+      heart.style.left = e.clientX + 'px';
+      heart.style.top = e.clientY + 'px';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 2000);
+    });
+  </script>
+</body>
+</html>
